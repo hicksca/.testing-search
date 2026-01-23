@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://example.com/search/sitemap.xml
+Sitemap: https://hicksca.github.io/.testing-search/search/sitemap.xml
