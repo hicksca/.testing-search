@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hicksca.github.io/.testing-search/index.html</loc></url>
+  <url><loc>https://hicksca.github.io/.testing-search/blog/index.html</loc></url>
+  <url><loc>https://hicksca.github.io/.testing-search/about/index.html</loc></url>
+  <url><loc>https://hicksca.github.io/.testing-search/tech/index.html</loc></url>
+  <url><loc>https://hicksca.github.io/.testing-search/hobbies/index.html</loc></url>
   <url><loc>https://hicksca.github.io/.testing-search/hobbies/3d-phone-cases-design.html</loc></url>
   <url><loc>https://hicksca.github.io/.testing-search/hobbies/3d-phone-cases-materials.html</loc></url>
   <url><loc>https://hicksca.github.io/.testing-search/hobbies/3d-phone-cases-print-tuning.html</loc></url>
