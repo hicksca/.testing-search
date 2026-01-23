@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proxmox: Storage Choices, ZFS, and Replication</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <header>
+    <h1>Proxmox: Storage Choices, ZFS, and Replication</h1>
+    <p class="small">Section: <strong>tech</strong></p>
+    <nav>
+      <a href="/index.html">Home</a> <a href="/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a> <a href="/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a> <a href="/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a> <a href="/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a> <a href="/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a> <a href="/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a> <a href="/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a> <a href="/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a> <a href="/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a> <a href="/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+  <h1>Proxmox: Storage Choices, ZFS, and Replication</h1>
+<p>Storage is where “hypervisor” turns into “architecture.” Many Proxmox clusters use local ZFS plus replication for a simple, reliable baseline.</p>
+<h2>Why ZFS is common</h2>
+<ul>
+<li>Fast snapshots</li>
+<li>Checksums to catch silent corruption</li>
+<li>Compression for better effective capacity</li>
+<li>Datasets for tuning</li>
+</ul>
+<h2>Replication is not shared storage</h2>
+<p>Replication is asynchronous: if a node fails, you may lose the last few minutes depending on schedule. That can be totally acceptable, but you should decide intentionally.</p>
+<h2>Practical tips</h2>
+<ul>
+<li>Prefer mirrored vdevs for rebuild predictability</li>
+<li>Don’t guess: measure ZFS ARC + guest memory usage</li>
+<li>Test restores, not just backups</li>
+</ul>
+<pre><code>zpool status
+zfs list
+zfs get compression,recordsize,atime pool/dataset</code></pre>
+  </main>
+
+  <footer>
+    <hr />
+    <p class="small">
+      Generated static site. Sitemap: <a href="/search/sitemap.xml">/search/sitemap.xml</a> &middot; Robots: <a href="/robots.txt">/robots.txt</a>
+    </p>
+  </footer>
+</body>
+</html>

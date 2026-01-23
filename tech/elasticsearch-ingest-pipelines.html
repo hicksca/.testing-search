@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elasticsearch: Ingest Pipelines for Clean Data</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <header>
+    <h1>Elasticsearch: Ingest Pipelines for Clean Data</h1>
+    <p class="small">Section: <strong>tech</strong></p>
+    <nav>
+      <a href="/index.html">Home</a> <a href="/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a> <a href="/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a> <a href="/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a> <a href="/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a> <a href="/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a> <a href="/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a> <a href="/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a> <a href="/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a> <a href="/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a> <a href="/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+  <h1>Elasticsearch: Ingest Pipelines for Clean Data</h1>
+<p>Ingest pipelines transform documents as they arrive—ETL at the edge.</p>
+<h2>Common processors</h2>
+<ul>
+<li>grok (parse logs)</li>
+<li>date (normalize timestamps)</li>
+<li>rename/set/remove (cleanup)</li>
+<li>geoip (enrichment)</li>
+</ul>
+<h2>Design tips</h2>
+<ul>
+<li>Prefer small composable pipelines</li>
+<li>Add failure handling so a single bad event doesn’t poison ingestion</li>
+<li>Version pipelines alongside index templates</li>
+</ul>
+<pre><code>GET _ingest/pipeline
+POST _ingest/pipeline/my-pipeline/_simulate</code></pre>
+  </main>
+
+  <footer>
+    <hr />
+    <p class="small">
+      Generated static site. Sitemap: <a href="/search/sitemap.xml">/search/sitemap.xml</a> &middot; Robots: <a href="/robots.txt">/robots.txt</a>
+    </p>
+  </footer>
+</body>
+</html>

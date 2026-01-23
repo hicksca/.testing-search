@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proxmox: Backup, Restore, and PBS Integration</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <header>
+    <h1>Proxmox: Backup, Restore, and PBS Integration</h1>
+    <p class="small">Section: <strong>tech</strong></p>
+    <nav>
+      <a href="/index.html">Home</a> <a href="/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a> <a href="/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a> <a href="/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a> <a href="/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a> <a href="/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a> <a href="/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a> <a href="/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a> <a href="/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a> <a href="/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a> <a href="/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+  <h1>Proxmox: Backup, Restore, and PBS Integration</h1>
+<p>Snapshots are rollback tools. Backups are survival tools.</p>
+<h2>vzdump is the built-in workhorse</h2>
+<p>You can run backups online (snapshot mode) or offline for maximum consistency. The goal is consistent, repeatable restores.</p>
+<h2>PBS adds the “grown up” features</h2>
+<ul>
+<li>Deduplication (especially great across many similar VMs)</li>
+<li>Verification</li>
+<li>Encryption</li>
+<li>Retention policies that are easier to live with</li>
+</ul>
+<h2>Restore strategy that actually works</h2>
+<ul>
+<li>Restore one VM monthly as a canary</li>
+<li>Document restore order and dependencies</li>
+<li>Test both full restore and file-level recovery</li>
+</ul>
+<pre><code>vzdump 101 --storage backup --mode snapshot --compress zstd</code></pre>
+  </main>
+
+  <footer>
+    <hr />
+    <p class="small">
+      Generated static site. Sitemap: <a href="/search/sitemap.xml">/search/sitemap.xml</a> &middot; Robots: <a href="/robots.txt">/robots.txt</a>
+    </p>
+  </footer>
+</body>
+</html>

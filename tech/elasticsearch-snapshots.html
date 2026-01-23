@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elasticsearch: Snapshots and Disaster Recovery</title>
+  <link rel="stylesheet" href="/assets/site.css" />
+</head>
+<body>
+  <header>
+    <h1>Elasticsearch: Snapshots and Disaster Recovery</h1>
+    <p class="small">Section: <strong>tech</strong></p>
+    <nav>
+      <a href="/index.html">Home</a> <a href="/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a> <a href="/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a> <a href="/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a> <a href="/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a> <a href="/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a> <a href="/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a> <a href="/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a> <a href="/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a> <a href="/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a> <a href="/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main>
+  <h1>Elasticsearch: Snapshots and Disaster Recovery</h1>
+<p>Snapshots are the only supported “real backup” mechanism in Elasticsearch. They’re incremental at the segment level, so repeated snapshots are efficient.</p>
+<h2>SLM (Snapshot Lifecycle Management)</h2>
+<p>SLM schedules snapshots and retention. A failing SLM policy is a quiet disaster waiting to happen.</p>
+<h2>Restore planning</h2>
+<ul>
+<li>Scope: full cluster vs selective indices</li>
+<li>RTO expectations</li>
+<li>Metadata dependencies: templates, ILM, pipelines, security config</li>
+</ul>
+<pre><code>GET _snapshot
+GET _snapshot/my-repo/_all
+GET _slm/policy
+GET _slm/stats</code></pre>
+  </main>
+
+  <footer>
+    <hr />
+    <p class="small">
+      Generated static site. Sitemap: <a href="/search/sitemap.xml">/search/sitemap.xml</a> &middot; Robots: <a href="/robots.txt">/robots.txt</a>
+    </p>
+  </footer>
+</body>
+</html>
