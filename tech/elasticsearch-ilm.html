@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,20 +24,11 @@
   </header>
 
   <main>
-  <h1>Elasticsearch: ILM for Time-Series Indices</h1>
-<p>ILM turns “keep logs forever” into “keep what we need, where we need it, for as long as we need it.”</p>
-<h2>The model</h2>
-<ul>
-<li>Rollover: new backing indices by size/age/doc-count</li>
-<li>Tiers: hot → warm → cold → frozen</li>
-<li>Delete: retention enforcement</li>
-</ul>
-<h2>Why rollover matters</h2>
-<p>Big shards are slow to move and slow to recover. Rollover keeps shard sizes predictable.</p>
-<pre><code>GET _ilm/policy
-GET _ilm/status
-GET my-datastream/_ilm/explain
-GET _cat/shards?v&amp;s=store:desc</code></pre>
+
+<h1>Elasticsearch: ILM for Time-Series Indices</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -43,7 +38,6 @@ GET _cat/shards?v&amp;s=store:desc</code></pre>
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

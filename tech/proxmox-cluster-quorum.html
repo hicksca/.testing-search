@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,29 +24,11 @@
   </header>
 
   <main>
-  <h1>Proxmox: Clustering, Quorum, and HA Basics</h1>
-<p>Proxmox becomes a platform when you treat it as a cluster rather than a single node. The cluster gives you a shared view of nodes, guests, storage, and permissions.</p>
-<h2>What quorum really does</h2>
-<p>Quorum answers: “Is it safe to make cluster-wide changes right now?”</p>
-<ul>
-<li>With quorum: safe config changes, migrations, HA actions.</li>
-<li>Without quorum: nodes can often keep running existing VMs locally, but the cluster avoids risky writes.</li>
-</ul>
-<h2>Two-node clusters (the tiebreaker problem)</h2>
-<p>Two nodes can’t form a safe majority if they lose contact. Typical fixes:</p>
-<ul>
-<li>Add a third Proxmox node (even a tiny one)</li>
-<li>Use a QDevice to provide an external vote</li>
-</ul>
-<h2>HA in one paragraph</h2>
-<p>HA helps restart VMs on healthy nodes during failure, but it depends on:</p>
-<ul>
-<li>quorum stability</li>
-<li>storage design (shared storage or replication that matches your recovery expectations)</li>
-</ul>
-<pre><code>pvecm status
-pvecm nodes
-journalctl -u corosync --no-pager | tail -n 100</code></pre>
+
+<h1>Proxmox: Clustering, Quorum, and HA Basics</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -52,7 +38,6 @@ journalctl -u corosync --no-pager | tail -n 100</code></pre>
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

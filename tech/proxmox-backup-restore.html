@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,24 +24,11 @@
   </header>
 
   <main>
-  <h1>Proxmox: Backup, Restore, and PBS Integration</h1>
-<p>Snapshots are rollback tools. Backups are survival tools.</p>
-<h2>vzdump is the built-in workhorse</h2>
-<p>You can run backups online (snapshot mode) or offline for maximum consistency. The goal is consistent, repeatable restores.</p>
-<h2>PBS adds the “grown up” features</h2>
-<ul>
-<li>Deduplication (especially great across many similar VMs)</li>
-<li>Verification</li>
-<li>Encryption</li>
-<li>Retention policies that are easier to live with</li>
-</ul>
-<h2>Restore strategy that actually works</h2>
-<ul>
-<li>Restore one VM monthly as a canary</li>
-<li>Document restore order and dependencies</li>
-<li>Test both full restore and file-level recovery</li>
-</ul>
-<pre><code>vzdump 101 --storage backup --mode snapshot --compress zstd</code></pre>
+
+<h1>Proxmox: Backup, Restore, and PBS Integration</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -47,7 +38,6 @@
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

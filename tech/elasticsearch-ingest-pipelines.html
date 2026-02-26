@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,23 +24,11 @@
   </header>
 
   <main>
-  <h1>Elasticsearch: Ingest Pipelines for Clean Data</h1>
-<p>Ingest pipelines transform documents as they arrive—ETL at the edge.</p>
-<h2>Common processors</h2>
-<ul>
-<li>grok (parse logs)</li>
-<li>date (normalize timestamps)</li>
-<li>rename/set/remove (cleanup)</li>
-<li>geoip (enrichment)</li>
-</ul>
-<h2>Design tips</h2>
-<ul>
-<li>Prefer small composable pipelines</li>
-<li>Add failure handling so a single bad event doesn’t poison ingestion</li>
-<li>Version pipelines alongside index templates</li>
-</ul>
-<pre><code>GET _ingest/pipeline
-POST _ingest/pipeline/my-pipeline/_simulate</code></pre>
+
+<h1>Elasticsearch: Ingest Pipelines for Clean Data</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -46,7 +38,6 @@ POST _ingest/pipeline/my-pipeline/_simulate</code></pre>
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

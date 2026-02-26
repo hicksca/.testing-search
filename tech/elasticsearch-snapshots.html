@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,20 +24,11 @@
   </header>
 
   <main>
-  <h1>Elasticsearch: Snapshots and Disaster Recovery</h1>
-<p>Snapshots are the only supported “real backup” mechanism in Elasticsearch. They’re incremental at the segment level, so repeated snapshots are efficient.</p>
-<h2>SLM (Snapshot Lifecycle Management)</h2>
-<p>SLM schedules snapshots and retention. A failing SLM policy is a quiet disaster waiting to happen.</p>
-<h2>Restore planning</h2>
-<ul>
-<li>Scope: full cluster vs selective indices</li>
-<li>RTO expectations</li>
-<li>Metadata dependencies: templates, ILM, pipelines, security config</li>
-</ul>
-<pre><code>GET _snapshot
-GET _snapshot/my-repo/_all
-GET _slm/policy
-GET _slm/stats</code></pre>
+
+<h1>Elasticsearch: Snapshots and Disaster Recovery</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -43,7 +38,6 @@ GET _slm/stats</code></pre>
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

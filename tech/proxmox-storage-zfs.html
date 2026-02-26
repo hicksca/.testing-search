@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +14,9 @@
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>tech</strong></p>
@@ -20,26 +24,11 @@
   </header>
 
   <main>
-  <h1>Proxmox: Storage Choices, ZFS, and Replication</h1>
-<p>Storage is where “hypervisor” turns into “architecture.” Many Proxmox clusters use local ZFS plus replication for a simple, reliable baseline.</p>
-<h2>Why ZFS is common</h2>
-<ul>
-<li>Fast snapshots</li>
-<li>Checksums to catch silent corruption</li>
-<li>Compression for better effective capacity</li>
-<li>Datasets for tuning</li>
-</ul>
-<h2>Replication is not shared storage</h2>
-<p>Replication is asynchronous: if a node fails, you may lose the last few minutes depending on schedule. That can be totally acceptable, but you should decide intentionally.</p>
-<h2>Practical tips</h2>
-<ul>
-<li>Prefer mirrored vdevs for rebuild predictability</li>
-<li>Don’t guess: measure ZFS ARC + guest memory usage</li>
-<li>Test restores, not just backups</li>
-</ul>
-<pre><code>zpool status
-zfs list
-zfs get compression,recordsize,atime pool/dataset</code></pre>
+
+<h1>Proxmox: Storage Choices, ZFS, and Replication</h1>
+<p>Write-up coming soon.</p>
+
+
   </main>
 
   <footer>
@@ -49,7 +38,6 @@ zfs get compression,recordsize,atime pool/dataset</code></pre>
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+

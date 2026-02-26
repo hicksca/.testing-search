@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,14 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blog</title>
   <link rel="stylesheet" href="/.testing-search/assets/site.css" />
-  <link rel="canonical" href="http://hicksca.github.io/.testing-search/blog/index.html"/>
+  <link rel="canonical" href="https://hicksca.github.io/.testing-search/blog/index.html"/>
 </head>
 <body>
   <header>
     <div class="topbar">
       <div class="brand"><a href="/.testing-search/index.html">.testing-search</a></div>
       <nav class="nav">
-        <a href="/.testing-search/index.html">Home</a> <a href="/.testing-search/blog/index.html">Blog</a> <a href="/.testing-search/about/index.html">About</a>
+        <a href="/.testing-search/index.html">Home</a>
+        <a href="/.testing-search/blog/index.html">Blog</a>
+        <a href="/.testing-search/about/index.html">About</a>
       </nav>
     </div>
     <p class="small">Section: <strong>blog</strong></p>
@@ -20,73 +24,81 @@
   </header>
 
   <main>
-  
+
+
 <h1>Blog</h1>
 <p class="kicker">All posts, grouped by category.</p>
 
-<h2><a href="/.testing-search/tech/index.html">Tech</a></h2>
 
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Why ZFS is popular, what replication does (and doesn’t), and how to choose a sane path.</p>
-</div>
+  <h2><a href="/.testing-search/hobbies/index.html">Hobbies</a></h2>
+  
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Tolerances, button alignment, and how to prototype without wasting filament.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Choosing the right filament for protection, durability, and sane printing.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Orientation, perimeters, and why walls matter more than infill for cases.</p>
+  </div>
+  
 
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>A practical explanation of quorum, split-brain avoidance, and what makes HA actually work.</p>
-</div>
+  <h2><a href="/.testing-search/tech/index.html">Tech</a></h2>
+  
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>How ILM prevents huge shards, enforces retention, and keeps tiering sane.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Normalize and enrich at write time so your data stays consistent and cheaper to use.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Snapshots are the real backup. SLM keeps it scheduled. Restore testing keeps it real.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>What embeddings buy you, what they cost you, and how to evaluate hybrid search.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Snapshots vs backups, vzdump basics, and why PBS makes restores less miserable.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/proxmox-cluster-quorum.html">Proxmox: Clustering, Quorum, and HA Basics</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>A practical explanation of quorum, split-brain avoidance, and what makes HA actually work.</p>
+  </div>
+  
+  <div class="card">
+    <p><strong><a href="/.testing-search/tech/proxmox-storage-zfs.html">Proxmox: Storage Choices, ZFS, and Replication</a></strong></p>
+    <p class="small">2026-01-23</p>
+    <p>Why ZFS is popular, what replication does (and doesn’t), and how to choose a sane path.</p>
+  </div>
+  
 
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/proxmox-backup-restore.html">Proxmox: Backup, Restore, and PBS Integration</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Snapshots vs backups, vzdump basics, and why PBS makes restores less miserable.</p>
-</div>
 
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/elasticsearch-vector-search.html">Elasticsearch: Vector Search in Plain English</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>What embeddings buy you, what they cost you, and how to evaluate hybrid search.</p>
-</div>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/elasticsearch-snapshots.html">Elasticsearch: Snapshots and Disaster Recovery</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Snapshots are the real backup. SLM keeps it scheduled. Restore testing keeps it real.</p>
-</div>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/elasticsearch-ingest-pipelines.html">Elasticsearch: Ingest Pipelines for Clean Data</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Normalize and enrich at write time so your data stays consistent and cheaper to use.</p>
-</div>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/tech/elasticsearch-ilm.html">Elasticsearch: ILM for Time-Series Indices</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>How ILM prevents huge shards, enforces retention, and keeps tiering sane.</p>
-</div>
-
-<h2><a href="/.testing-search/hobbies/index.html">Hobbies</a></h2>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-print-tuning.html">3D Printing Phone Cases: Print Tuning and Durability</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Orientation, perimeters, and why walls matter more than infill for cases.</p>
-</div>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-materials.html">3D Printing Phone Cases: PLA vs PETG vs TPU</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Choosing the right filament for protection, durability, and sane printing.</p>
-</div>
-
-<div class="card">
-  <p><strong><a href="/.testing-search/hobbies/3d-phone-cases-design.html">3D Printing Phone Cases: Designing for Real-World Fit</a></strong></p>
-  <p class="small">2026-01-23</p>
-  <p>Tolerances, button alignment, and how to prototype without wasting filament.</p>
-</div>
 
   </main>
 
@@ -97,7 +109,6 @@
       &middot; Robots: <a href="/.testing-search/robots.txt">/.testing-search/robots.txt</a>
     </p>
   </footer>
-
-  
 </body>
 </html>
+
