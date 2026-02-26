@@ -26,7 +26,127 @@
   <main>
 
 <h1>Proxmox: Storage Choices, ZFS, and Replication</h1>
-<p>Write-up coming soon.</p>
+<p>Choosing storage in Proxmox is one of the most important decisions you’ll make. It directly affects performance, recoverability, operational complexity, and how much pain you experience when something inevitably breaks.</p>
+<p>There are many options, but most homelab and small production deployments eventually circle back to one question:</p>
+<blockquote>
+<p>Should I use ZFS?</p>
+</blockquote>
+<h2>The Common Storage Paths</h2>
+<p>In Proxmox, you’ll typically see a few common approaches:</p>
+<ul>
+<li><strong>Local LVM (ext4 or xfs)</strong></li>
+<li><strong>Local ZFS</strong></li>
+<li><strong>Shared storage (NFS, iSCSI, Ceph, etc.)</strong></li>
+<li><strong>ZFS with replication between nodes</strong></li>
+</ul>
+<p>Each has tradeoffs. The right choice depends on scale and expectations.</p>
+<hr>
+<h2>Why ZFS Is So Popular</h2>
+<p>ZFS has become the default recommendation in many Proxmox environments for good reason.</p>
+<p>It provides:</p>
+<ul>
+<li>Copy-on-write protection</li>
+<li>End-to-end checksumming</li>
+<li>Snapshots</li>
+<li>Send/receive replication</li>
+<li>Integrated RAID (mirror, RAIDZ1/2/3)</li>
+</ul>
+<p>Unlike traditional RAID + filesystem stacks, ZFS is a combined volume manager and filesystem. That matters.</p>
+<p>With ZFS, silent corruption is detected. Snapshots are cheap. Replication is built-in. Recovery workflows are straightforward.</p>
+<p>For small clusters (2–5 nodes), local ZFS on each node is often the simplest and most resilient architecture you can build.</p>
+<hr>
+<h2>The Reality of ZFS Performance</h2>
+<p>ZFS is not magic. It trades simplicity for RAM usage and write amplification.</p>
+<p>Things to understand:</p>
+<ul>
+<li>ZFS prefers RAM (ARC cache)</li>
+<li>Mirrored vdevs provide better IOPS than RAIDZ</li>
+<li>RAIDZ is capacity efficient but slower for random writes</li>
+<li>Sync workloads can be bottlenecked without SLOG (rarely needed in homelabs)</li>
+</ul>
+<p>If you are running mostly VMs with mixed workloads, mirrored SSDs are usually the most predictable configuration.</p>
+<p>If you are chasing capacity over performance, RAIDZ2 can be fine — just understand the tradeoffs.</p>
+<hr>
+<h2>Snapshots vs Backups</h2>
+<p>Snapshots are fast and convenient. They are not backups.</p>
+<p>A snapshot protects you from:</p>
+<ul>
+<li>Accidental deletion</li>
+<li>Short-term rollback needs</li>
+<li>Minor corruption</li>
+</ul>
+<p>It does not protect you from:</p>
+<ul>
+<li>Disk failure (if no redundancy)</li>
+<li>Node failure (if local only)</li>
+<li>Ransomware (if attacker deletes snapshots)</li>
+</ul>
+<p>Snapshots are a local safety net. Backups must exist somewhere else.</p>
+<hr>
+<h2>ZFS Replication in Proxmox</h2>
+<p>Proxmox includes built-in ZFS replication. It works by:</p>
+<ol>
+<li>Taking a snapshot</li>
+<li>Sending the incremental changes</li>
+<li>Receiving them on another node</li>
+</ol>
+<p>This gives you:</p>
+<ul>
+<li>Near real-time copy of VM disks</li>
+<li>Fast failover potential</li>
+<li>Simple configuration</li>
+</ul>
+<p>But it is important to understand what replication is <em>not</em>:</p>
+<ul>
+<li>It is not shared storage.</li>
+<li>It is not synchronous HA.</li>
+<li>It is not a substitute for backups.</li>
+</ul>
+<p>Replication creates a warm copy. If the primary node dies, you can manually (or via HA) start the VM on the secondary node.</p>
+<p>For many small clusters, this is “good enough HA” without the complexity of Ceph.</p>
+<hr>
+<h2>When Shared Storage Makes Sense</h2>
+<p>If you require:</p>
+<ul>
+<li>Live migration without replication delays</li>
+<li>Larger clusters</li>
+<li>Horizontal scaling</li>
+<li>Strict uptime requirements</li>
+</ul>
+<p>Then shared storage (Ceph, iSCSI SAN, etc.) becomes more appropriate.</p>
+<p>But shared storage increases operational complexity significantly.</p>
+<p>Ceph, for example, is powerful — but it demands proper hardware, networking, and operational maturity. It is not a drop-in solution for a 2-node lab cluster.</p>
+<hr>
+<h2>A Sane Path for Most Deployments</h2>
+<p>For small to medium environments:</p>
+<ul>
+<li>Use <strong>local ZFS</strong></li>
+<li>Use <strong>mirrored vdevs</strong></li>
+<li>Enable <strong>regular snapshots</strong></li>
+<li>Configure <strong>ZFS replication between nodes</strong></li>
+<li>Maintain <strong>external backups (PBS recommended)</strong></li>
+</ul>
+<p>This provides:</p>
+<ul>
+<li>Data integrity</li>
+<li>Node-level redundancy</li>
+<li>Fast restores</li>
+<li>Manageable operational complexity</li>
+</ul>
+<p>You avoid the fragility of single-disk LVM setups and the operational overhead of full distributed storage systems.</p>
+<hr>
+<h2>The Real Question</h2>
+<p>The right storage choice isn’t about performance benchmarks. It’s about operational tolerance.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>How much downtime is acceptable?</li>
+<li>How comfortable am I troubleshooting distributed systems?</li>
+<li>Do I have monitoring in place?</li>
+<li>Do I test restores?</li>
+</ul>
+<p>Storage decisions are risk decisions.</p>
+<p>ZFS gives you strong defaults and guardrails. Replication gives you resilience. Backups give you safety.</p>
+<p>Use all three appropriately, and Proxmox becomes far less stressful to operate.</p>
 
 
   </main>
